@@ -3,7 +3,7 @@ from django.template import loader, RequestContext
 from django.shortcuts import render_to_response, render
 from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth.models import User
-
+from django.contrib.auth import authenticate, login
 
 def index(request):
     if request.method == 'GET':
@@ -14,16 +14,41 @@ def index(request):
 def register(request):
     if request.method == 'GET':
         return render(request, 'register.html')
-        #return HttpResponse(loader.get_template('register.html').render())
     elif request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
         password_confirmation = request.POST['password_confirmation']
 
+        if len(password) < 8:
+            return HttpResponse("password too short")
+
         if password != password_confirmation:
             return HttpResponse("passwords do not match")
 
-        user = User.objects.create_user('username', 'email@email.email', password)
-        user.save()
+        if not User.objects.filter(username=username).exists():
+            user = User.objects.create_user(username, password=password)
+            user.save()
+        else:
+            return HttpResponse("user exist")
 
-        return HttpResponse("DONE")
+        return HttpResponse("User {} created".format(username))
+
+
+@csrf_protect
+def login_view(request):
+    if request.method == 'GET':
+        auth_user = 'no user'
+        if request.user.is_authenticated:
+            auth_user = request.user.username
+        return render(request, 'login.html', {'auth_user': auth_user})
+    elif request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = authenticate(username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return HttpResponse('request suq')
+        else:
+            return HttpResponse('invalid username or password')

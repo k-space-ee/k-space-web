@@ -22,5 +22,6 @@ from challenges import views
 urlpatterns = [
     url(r'^$', views.index),
     url(r'^admin/', admin.site.urls),
+    url(r'^login/', views.login_view),
     url(r'^register/', views.register),
 ] + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS)

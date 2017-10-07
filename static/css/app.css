@@ -1,0 +1,15 @@
+h1, h2 {
+  font-family: 'Orbitron', cursive;
+}
+
+.challenges .btn-large, .header h1 {
+  background-color: #3498db;
+}
+
+.slogan {
+  color: #3498db;
+}
+
+footer, .map {
+  background-color: #34495e !important;
+}

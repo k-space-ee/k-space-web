@@ -1,39 +1,310 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Index</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>K-space</title>
+  <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./materialize.min.css">
+  <link rel="stylesheet" href="./app.css">
 </head>
+
 <body>
-    <h1>Logged in user{{ logged_int }}</h1>
-    <ul>
-        {% for o in challenges %}
-            <tr class="row">
-                {{ o }}
-            </tr>
-        {% endfor %}
-    </ul>
+  <div id="container" class="grey lighten-4">
 
-    <ul>
-        {% for i in challenge_pair %}
-            <tr class="row">
-                {{ i.user.username }} - {{ i.challenge }}
-            </tr>
-            <tr class="picture">
-                <img src= '{{ i.user.profile.icon }}' style="max-width:10%">
-            </tr>
-        {% endfor %}
-    </ul>
+    <div class="header section center-align">
+      <h1 class="section z-depth-1 white-text">k-space.ee</h1>
+    </div>
 
-    <ul>
-        {% for i in users %}
-            <tr class="picture">
-                <img src= '{{ i.user.profile.icon }}' style="max-width:10%">
-            </tr>
-            <tr class="row">
-                {{ i.username }} - {{i.total_challenges}}
-            </tr>
-        {% endfor %}
-    </ul>
+    <br/><br/><br/>
+
+    <!-- landing page custom -->
+
+    <div class="row container">
+
+      <div class="section slogan">
+        <h2 class="center-align" style="font-weight:bold">Do actual stuff!</br></h2>
+      </div>
+
+    </div>
+
+    <!-- ideas solution success -->
+    <div class="row container section">
+
+      <div class="col s12 m4">
+        <div class="section center-align">
+          <i class="material-icons large">search</i><br/>
+
+          <h5 class="row">Discover awesome <b class="blue-text">ideas</b></h5>
+          <div class="row">
+            <div class="col">
+
+              <p class="">
+                Find out what we are struggling with
+                <br/>
+                Browse our list of challenges
+                <br/>
+                Come up with even more awesome ideas
+              </p>
+
+            </div>
+          </div>
+
+          <a href="#" class="btn-large blue">to ideas</a>
+
+          <!-- <div class="card">
+            <div class="card-image">
+              <img class="responsive-img" src="https://owncloud.koodur.com/index.php/apps/gallery/preview.public/1055442?width=2600&height=2600&c=bff9f89b4125dc8e3a0b27a8b2a96974&requesttoken=UxgCdwYvOglsFHEzLxo4KkQdLH4UDlgyF2xfAFsHY20%3D%3A0K636DNp8vHvjWqS%2Bzj9WywtPGfLln07OnGOVueXLOI%3D&token=j0HUdRNEaZ37wGE"/>
+            </div>
+          </div> -->
+
+        </div>
+
+      </div>
+
+      <div class="col s12 m4">
+        <div class="section center-align">
+          <i class="material-icons large">lightbulb_outline</i><br/>
+          <h5>Find a <b class="amber-text">solution</b></h5>
+          <div class="row">
+            <div class="col s12">
+              <p class="">
+                Assemble a team
+                <br/>
+                Try to solve the problem
+              </p>
+            </div>
+          </div>
+
+          <!-- <div class="card">
+            <div class="card-image">
+              <img class="responsive-img" src="https://owncloud.koodur.com/index.php/apps/gallery/preview.public/1055266?width=2600&height=2600&c=a3c09377586ace640d57e4e7ac9184b7&requesttoken=UxgCdwYvOglsFHEzLxo4KkQdLH4UDlgyF2xfAFsHY20%3D%3A0K636DNp8vHvjWqS%2Bzj9WywtPGfLln07OnGOVueXLOI%3D&token=j0HUdRNEaZ37wGE"/>
+            </div>
+          </div> -->
+
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="section center-align">
+          <i class="material-icons large">star_half</i><br/>
+
+          <h5>Add <b class="green-text">success</b> to your portfolio</h5>
+          <div class="row">
+            <div class="col">
+              <p class="left-align">
+                Your k-space achievements will be visible to all future visitors
+              </p>
+            </div>
+          </div>
+          <a href="#" class="btn-large green">to success</a>
+<!--
+          <div class="card">
+            <div class="card-image">
+              <img class="responsive-img" src="http://robot.itcollege.ee/assets/img/sumoesp-soldered.jpg"/>
+            </div>
+          </div> -->
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="section map z-depth-1">
+
+      <div class="container white-text">
+        <h2 class="">We have</h2>
+        <div class="row section">
+          <div class="col s12 m6">
+            <h5>More than <b>300m<sup>2</sup></b> of space</h5>
+            <p>It's like the whole floor</p>
+          </div>
+        </div>
+      </div>
+      <!-- SVG START -->
+
+      <div class="container white-text">
+        <div class="row">
+          <div class="col s1">yo</div>
+          <div class="col s1">yo</div>
+          <div class="col s1">yo</div>
+          <div class="col s1">yo</div>
+          <div class="col s1">yo</div>
+          <div class="col s1">yo</div>
+          <div class="col s1">yo</div>
+          <div class="col s1">yo</div>
+          <div class="col s1">yo</div>
+          <div class="col s1">yo</div>
+          <div class="col s1">yo</div>
+          <div class="col s1">yo</div>
+        </div>
+      </div>
+
+      <div class="container">
+
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        	 viewBox="0 0 777.9 239.1" style="enable-background:new 0 0 777.9 239.1;" xml:space="preserve">
+        <style type="text/css">
+        	.st0{fill:#26719B;stroke:#34495E;stroke-width:5;stroke-miterlimit:10;}
+        	.st1{fill:#3498DB;stroke:#34495E;stroke-width:5;stroke-miterlimit:10;}
+        	.st2{fill:#ECF0F1;stroke:#ECF0F1;stroke-miterlimit:10;}
+        	.st3{fill:#ECF0F1;stroke:#ECF0F1;stroke-width:0.5;stroke-miterlimit:10;}
+        </style>
+        <g id="bg">
+        </g>
+        <g id="Layer_1">
+        	<g id="XMLID_20_">
+        		<rect id="XMLID_14_" x="71.8" y="70.6" class="st0" width="265.8" height="29.8"/>
+        		<rect id="XMLID_16_" x="404.1" y="70.6" class="st0" width="265.8" height="29.8"/>
+        	</g>
+        	<g id="XMLID_17_">
+        		<rect id="XMLID_1_" x="4.6" y="100.9" class="st1" width="333" height="40.2"/>
+        		<rect id="XMLID_4_" x="71.8" y="141.2" class="st1" width="66.4" height="66.4"/>
+        		<rect id="XMLID_5_" x="4.6" y="176.4" class="st1" width="67.2" height="31.2"/>
+        		<rect id="XMLID_6_" x="138.3" y="141.2" class="st1" width="66.4" height="66.4"/>
+        		<rect id="XMLID_7_" x="337.6" y="141.2" class="st1" width="66.4" height="66.4"/>
+        		<polygon id="XMLID_3_" class="st1" points="38.2,100.4 4.6,100.4 4.6,46.3 19,31.5 38.2,31.5 		"/>
+        		<rect id="XMLID_2_" x="403.5" y="100.4" class="st1" width="265.8" height="40.2"/>
+        		<rect id="XMLID_13_" x="536.4" y="140.6" class="st1" width="66.4" height="66.4"/>
+        		<rect id="XMLID_11_" x="602.9" y="140.6" class="st1" width="66.4" height="66.4"/>
+        		<polygon id="XMLID_8_" class="st1" points="702.9,100.4 669.3,100.4 669.3,46.3 683.7,31.5 702.9,31.5 		"/>
+        		<rect id="XMLID_10_" x="337.6" y="100.9" class="st1" width="66.4" height="40.2"/>
+        		<polygon id="XMLID_12_" class="st1" points="370,100.4 403.5,100.4 403.5,46.3 389.2,31.5 370,31.5 		"/>
+        		<polygon id="XMLID_9_" class="st1" points="773.8,207.1 736.9,207.1 736.9,140.6 669.3,140.6 669.3,100.4 773.8,100.4 		"/>
+        	</g>
+        </g>
+        <g id="jooned">
+        	<g id="XMLID_212_">
+        		<line id="XMLID_214_" class="st2" x1="20.9" y1="65.9" x2="20.9" y2="0"/>
+        		<ellipse id="XMLID_213_" class="st3" cx="20.9" cy="65.9" rx="4" ry="3.9"/>
+        	</g>
+        	<g id="XMLID_209_">
+        		<line id="XMLID_211_" class="st2" x1="170.6" y1="121.1" x2="170.6" y2="-0.2"/>
+        		<ellipse id="XMLID_210_" class="st3" cx="170.6" cy="121.1" rx="4" ry="3.9"/>
+        	</g>
+        	<g id="XMLID_206_">
+        		<line id="XMLID_208_" class="st2" x1="536.4" y1="120.6" x2="536.4" y2="-0.7"/>
+        		<ellipse id="XMLID_207_" class="st3" cx="536.4" cy="120.6" rx="4" ry="3.9"/>
+        	</g>
+        	<g id="XMLID_203_">
+        		<line id="XMLID_205_" class="st2" x1="386.7" y1="65.9" x2="386.7" y2="0"/>
+        		<ellipse id="XMLID_204_" class="st3" cx="386.7" cy="65.9" rx="4" ry="3.9"/>
+        	</g>
+        	<g id="XMLID_200_">
+        		<line id="XMLID_202_" class="st2" x1="686.1" y1="65.7" x2="686.1" y2="-0.2"/>
+        		<ellipse id="XMLID_201_" class="st3" cx="686.1" cy="65.7" rx="4" ry="3.9"/>
+        	</g>
+        	<g id="XMLID_197_">
+        		<line id="XMLID_199_" class="st2" x1="37.7" y1="191.4" x2="37.7" y2="239.1"/>
+        		<ellipse id="XMLID_198_" class="st3" cx="37.7" cy="191.4" rx="4" ry="3.9"/>
+        	</g>
+        	<g id="XMLID_194_">
+        		<line id="XMLID_196_" class="st2" x1="104.5" y1="174.1" x2="104.5" y2="239.1"/>
+        		<ellipse id="XMLID_195_" class="st3" cx="104.5" cy="173.8" rx="4" ry="3.9"/>
+        	</g>
+        	<g id="XMLID_191_">
+        		<line id="XMLID_193_" class="st2" x1="171" y1="173.8" x2="171" y2="239.1"/>
+        		<ellipse id="XMLID_192_" class="st3" cx="171" cy="173.8" rx="4" ry="3.9"/>
+        	</g>
+        	<g id="XMLID_188_">
+        		<line id="XMLID_190_" class="st2" x1="370.3" y1="173.8" x2="370.3" y2="239.2"/>
+        		<ellipse id="XMLID_189_" class="st3" cx="370.3" cy="173.8" rx="4" ry="3.9"/>
+        	</g>
+        	<g id="XMLID_185_">
+        		<line id="XMLID_187_" class="st2" x1="569.7" y1="173.8" x2="569.7" y2="239.1"/>
+        		<ellipse id="XMLID_186_" class="st3" cx="569.7" cy="173.8" rx="4" ry="3.9"/>
+        	</g>
+        	<g id="XMLID_182_">
+        		<line id="XMLID_184_" class="st2" x1="636.1" y1="173.8" x2="636.1" y2="239.1"/>
+        		<ellipse id="XMLID_183_" class="st3" cx="636.1" cy="173.8" rx="4" ry="3.9"/>
+        	</g>
+        </g>
+        </svg>
+
+    </div>
+
+    <div class="container white-text">
+      <div class="row">
+        <div class="col s1">yo</div>
+        <div class="col s1">yo</div>
+        <div class="col s1">yo</div>
+        <div class="col s1">yo</div>
+        <div class="col s1">yo</div>
+        <div class="col s1">yo</div>
+        <div class="col s1">yo</div>
+        <div class="col s1">yo</div>
+        <div class="col s1">yo</div>
+        <div class="col s1">yo</div>
+        <div class="col s1">yo</div>
+        <div class="col s1">yo</div>
+      </div>
+    </div>
+  </div>
+
+
+
+      <!-- SVG END -->
+
+    <div>
+
+      <div class="row section">
+        <div class="col s12 m6 offset-m2">
+          <h5><b>23.2</b> different tools</h5>
+          <p>Including CNC bench, 3D printer, servers, chainsaws, sledgehammers </p>
+        </div>
+      </div>
+      <div class="row section">
+        <div class="col s12 m6 offset-m3">
+          <h5><b>29</b> people</h5>
+          <p>Maybe one or two more</p>
+        </div>
+      </div>
+    </div>
+
+    <br/>
+
+    <footer class="page-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">Contact</h5>
+              <p class="grey-text text-lighten-4">
+                <i class="material-icons">phone</i>&nbsp;Call Lauri 55 55 5555
+              </p>
+
+              <h5 class="white-text">Sponsors</h5>
+              <p class="grey-text text-lighten-4">
+                We have more than 10 companies supporting us financially and by equipment
+                </br>
+                <a href="#">I want to become a sponsor</a>
+              </p>
+
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="white-text">Links</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="#!">Location</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Mission</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">People</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+          © 2017 k-space
+          <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
+          </div>
+        </div>
+      </footer>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+  <script src="./app.js"></script>
 </body>
+
 </html>

@@ -25,7 +25,7 @@ SECRET_KEY = 'gze3mreum6caz26_k2zq8(zn+)v3pdfaup+-e20eu@vca5st=b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['k-space.ee']
+ALLOWED_HOSTS = ['k-space.ee', '127.0.0.1']
 
 
 # Application definition

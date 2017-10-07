@@ -60,7 +60,9 @@ def logout_view(request):
 
 
 def challenge(request):
-    if request.method == 'POST':
+    if request.method == 'GET':
+        return render(request, 'challenge.html')
+    elif request.method == 'POST':
         if not request.user.is_authenticated:
             return HttpResponse('not logged in')
         challenge_name = request.POST['challenge_name']
@@ -72,4 +74,19 @@ def challenge(request):
 
 def dashboard(request):
     if request.method == 'GET':
-        return render(request, 'dashboard.html')
+        data = {'challenges': Challenge.objects.all()}
+        return render(request, 'dashboard.html', data)
+
+
+def hall_of_fame(request):
+    if request.method == 'GET':
+        data = {
+            'users': User.objects.all()
+        }
+        return render(request, 'hall_of_fame.html', data)
+
+
+def profile(request, username):
+    if request.method == 'GET':
+
+        return render(request, 'profile.html')

@@ -1,4 +1,4 @@
-xxxh1, h2 {
+h1, h2 {
   font-family: 'Orbitron', cursive;
 }
 
@@ -50,4 +50,20 @@ xxxh1, h2 {
 
 footer, .map {
   background-color: #34495e !important;
+}
+
+.card{
+	width: 800px;
+	margin: 0 auto;
+}
+.progress{
+	height:10px;
+}
+.profile{
+	width:300px;
+}
+
+ul {
+	font-size: 20px;
+	line-height: 38px;
 }

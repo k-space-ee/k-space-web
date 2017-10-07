@@ -25,9 +25,9 @@ urlpatterns = [
     url(r'^login/', views.login_view),
     url(r'^logout/', views.logout_view),
     url(r'^register/', views.register),
-    url(r'^challenge/', views.challenge),
+    url(r'^challenge/(?P<id>[0-9]+)', views.challenge),
     url(r'^challenges/', views.dashboard),
     url(r'^halloffame/', views.hall_of_fame),
-    url(r'^profile/(?P<username>[\w-]+)', views.profile)
+    url(r'^profile/(?P<username>[\w.-]+)', views.profile)
 ] + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS) + \
     static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

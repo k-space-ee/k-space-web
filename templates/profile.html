@@ -29,23 +29,24 @@
       <div class="col s12 m5" style="height:600px;padding-top: 10px;">
         <div>
           <div class="image">
-            <img style="height: 450px;" src="https://image.freepik.com/free-icon/profile-image-square-of-facebook_318-37395.jpg">
+            <img style="height: 450px;" src="/media/{{ user.profile.icon }}">
           </div>
         </div>
       </div>
       <div class="col s12 m3 l3" >
-        <h2 class="center-align" style="font-weight:bold;font-size: 50px;">Username<br></h2>
+        <h2 class="center-align" style="font-weight:bold;font-size: 50px;">{{ user.username }}<br></h2>
         <div class="card" style="width:700px;background-color: #34495e;border-radius: 5px;margin: auto 0">
             <div class="card-content white-text">
               <span class="card-title" style="font-weight: normal">Description</span>
               <p style="font-size: 18px;">I am a very simple man. I am good at processing small bits of information.
               I am convenient because I require little food to function effectively.</p><br>
-              <span class="card-title" style="font-weight: normal">Achievements</span>
+              <span class="card-title" style="font-weight: normal">Challenges</span>
               <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Achievement 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Achievement 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Achievement 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Achievement 4</a></li>
+                  {% for challenge in challenges %}
+                      <li><a class="grey-text text-lighten-3" href="/challenge/{{ challenge.id }}">{{ challenge.name }}</a></li>
+                  {% empty %}
+                      <li>User has not completed any challenges</li>
+                  {% endfor %}
                 </ul>
             </div>
           </div>

@@ -59,7 +59,7 @@ def logout_view(request):
     return HttpResponse('logged out')
 
 
-def challenge(request):
+def challenge(request, id):
     if request.method == 'GET':
         return render(request, 'challenge.html')
     elif request.method == 'POST':
@@ -86,7 +86,12 @@ def hall_of_fame(request):
         return render(request, 'hall_of_fame.html', data)
 
 
-def profile(request, username):
+def profile(request, username=''):
     if request.method == 'GET':
-
-        return render(request, 'profile.html')
+        user = User.objects.get(username=username)
+        challenges = UserChallenge.objects.filter(user=user)
+        data = {
+            'user': user,
+            'challenges': challenges
+        }
+        return render(request, 'profile.html', data)

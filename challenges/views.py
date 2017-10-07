@@ -8,31 +8,7 @@ from .models import *
 
 def index(request):
     if request.method == 'GET':
-        user = 'not logged in'
-        if request.user.is_authenticated:
-            user = request.user.username
-
-        challenges = Challenge.objects.all()
-        challenge_pair = UserChallenge.objects.all()
-        users = User.objects.all()
-        user_data = []
-
-        for u in users:
-            data = {
-                'user': u,
-                'total_challenges': len(UserChallenge.objects.filter(user=u))
-            }
-            user_data.append(data)
-
-        template_dict = {
-            'logged_in': user,
-            'challenges': challenges,
-            'challenge_pair': challenge_pair,
-            'users': user_data
-        }
-
-        return render(request, 'landing.html', template_dict)
-
+        return render(request, 'index.html')
 
 @csrf_protect
 def register(request):

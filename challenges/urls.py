@@ -25,4 +25,5 @@ urlpatterns = [
     url(r'^login/', views.login_view),
     url(r'^logout/', views.logout_view),
     url(r'^register/', views.register),
-] + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS)
+] + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS) + \
+    static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

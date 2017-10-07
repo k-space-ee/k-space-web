@@ -14,15 +14,24 @@ def index(request):
 
         challenges = Challenge.objects.all()
         challenge_pair = UserChallenge.objects.all()
+        users = User.objects.all()
+        user_data = []
 
-        print(challenge_pair)
+        for u in users:
+            data = {
+                'user': u,
+                'total_challenges': len(UserChallenge.objects.filter(user=u))
+            }
+            user_data.append(data)
 
-        for item in challenge_pair:
-            print(item.user.username)
+        template_dict = {
+            'logged_in': user,
+            'challenges': challenges,
+            'challenge_pair': challenge_pair,
+            'users': user_data
+        }
 
-        return render(request, 'index.html', {'logged_in': user,
-                                              'challenges': challenges,
-                                              'challenge_pair': challenge_pair})
+        return render(request, 'landing.html', template_dict)
 
 
 @csrf_protect
@@ -72,3 +81,14 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return HttpResponse('logged out')
+
+
+def challenge(request):
+    if request.method == 'POST':
+        if not request.user.is_authenticated:
+            return HttpResponse('not logged in')
+        challenge_name = request.POST['challenge_name']
+        challenge_description = request.POST['challenge_discription']
+        tags = []
+        challenge = Challenge(creator=request.user, name=challenge_name, description=challenge_description, tags=tags)
+        challenge.save()

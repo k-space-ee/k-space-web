@@ -103,3 +103,6 @@ ENV/
 db.sqlite3
 workspace.xml
 tasks.xml
+
+media/icons
+challenges/migrations

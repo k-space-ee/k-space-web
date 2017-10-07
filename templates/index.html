@@ -19,6 +19,20 @@
             <tr class="row">
                 {{ i.user.username }} - {{ i.challenge }}
             </tr>
+            <tr class="picture">
+                <img src= '{{ i.user.profile.icon }}' style="max-width:10%">
+            </tr>
+        {% endfor %}
+    </ul>
+
+    <ul>
+        {% for i in users %}
+            <tr class="picture">
+                <img src= '{{ i.user.profile.icon }}' style="max-width:10%">
+            </tr>
+            <tr class="row">
+                {{ i.username }} - {{i.total_challenges}}
+            </tr>
         {% endfor %}
     </ul>
 </body>

@@ -68,3 +68,8 @@ def challenge(request):
         tags = []
         challenge = Challenge(creator=request.user, name=challenge_name, description=challenge_description, tags=tags)
         challenge.save()
+
+
+def dashboard(request):
+    if request.method == 'GET':
+        return render(request, 'dashboard.html')

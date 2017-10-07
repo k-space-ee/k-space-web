@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+    <h1>Logged in user{{ logged_int }}</h1>
+    <ul>
+        {% for o in challenges %}
+            <tr class="row">
+                {{ o }}
+            </tr>
+        {% endfor %}
+    </ul>
+
+    <ul>
+        {% for i in challenge_pair %}
+            <tr class="row">
+                {{ i.user.username }} - {{ i.challenge }}
+            </tr>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -15,24 +15,51 @@
   <div id="container" class="grey lighten-4">
 
     <div class="header section center-align">
-      <h1 class="section z-depth-1 white-text">k-space.ee</h1>
+      <h1 class="section z-depth-1 white-text"><a href="/">k-space.ee</a></h1>
     </div>
 
     <br><br><br>
 
-    <!-- landing page custom -->
-
-
-
-    <!-- ideas solution success -->
     <div class="row container section">
-      <div class="col s12 m5" style="height:600px;padding-top: 10px;">
+      <div class="col s12 m3" style="height:600px;padding-top: 10px;">
         <div>
-          <div class="image">
-            <img style="height: 450px;" src="/media/{{ user.profile.icon }}">
+          <div class="card" style="width: 450px;height:570px;">
+            <div class="image">
+              <img style="height: 450px;border-radius: 4px;" src="/media/{{ user.profile.icon }}">
+              <br><br>
+              <div class="row">
+                <div class="col s12 m1">
+                  <img style="padding-left: 5px;" src="https://images.vexels.com/media/users/3/143424/isolated/preview/2aa6cd7edd894a7cefa4eaf0f5916ee9-lightning-bolt-small-by-vexels.png" width="25" height="25" alt="">
+                </div>
+                <div class="col s12 m10">
+                  <div class="progress" style="background-color: #f1f1f1">
+                    <div class="determinate" style="width: 30%; background-color:#ffc107;"></div>
+                  </div>
+                </div>
+                <div class="col s12 m1" >
+                  <span style="color: #ffc107">3</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12 m1">
+                  <img style="padding-left: 5px;" src="https://www.chowan.edu/sites/chowan.edu/files/www/info-areas/sidebar-images/it-help-desk-logo.png" width="25" height="25" alt="">
+                </div>
+                <div class="col s12 m10">
+                  <div class="progress" style="background-color: #f1f1f1">
+                    <div class="determinate" style="width: 70%; background-color:#3498db;"></div>
+                  </div>
+                </div>
+                <div class="col s12 m1">
+                  <span style="color:#3498db">7</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <div class="col s12 m2">
+      </div>
+
       <div class="col s12 m3 l3" >
         <h2 class="center-align" style="font-weight:bold;font-size: 50px;">{{ user.username }}<br></h2>
         <div class="card" style="width:700px;background-color: #34495e;border-radius: 5px;margin: auto 0">

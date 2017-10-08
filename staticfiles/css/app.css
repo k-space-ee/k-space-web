@@ -23,6 +23,10 @@ footer, .map {
 	height:10px;
 }
 
+.m4 {
+    margin-top: 30px;
+}
+
 a:link {
     color: white;
 }

@@ -48,12 +48,15 @@ h1, h2 {
   color: #3498db;
 }
 
+.m3 {
+    margin-top: 30px;
+}
+
 footer, .map {
   background-color: #34495e !important;
 }
 
 .card{
-    padding-top: 31px;
 	margin: 0 auto;
 }
 .progress{

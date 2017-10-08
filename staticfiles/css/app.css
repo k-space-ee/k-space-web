@@ -56,3 +56,11 @@ ul {
 .card.small {
     height: auto;
 }
+
+.namelink, .namelink:visited {
+    color: black;
+}
+
+.namelink:hover {
+    color: #3498db;
+}

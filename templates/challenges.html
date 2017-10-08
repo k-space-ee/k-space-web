@@ -34,12 +34,12 @@
         <div class="row">
           {% for challenge in challenges %}
             <div class="col s12 m4">
-              <div class="card" style="height:400px;">
+              <div class="card" style="height:350px;">
                 <div class="card-content">
-                    <div class="row" style="height:260px;">
+                    <div class="row" style="height:210px;">
                         <div class="col s12 m12">
                             <div class="card-title"><b>{{ challenge.name }}</b></div>
-                            <p style="text-align: justify; max-height: 170px; overflow: auto;">{{ challenge.description }}</p>
+                            <p style="text-align: justify; max-height: 120px; overflow: auto;">{{ challenge.description }}</p>
                             <div style="padding-top: 15px;">
                                 {% for tag in challenge.tags.all %}
                                     <div class="chip">{{ tag.name }}</div>

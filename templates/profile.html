@@ -66,10 +66,10 @@
         <h2 class="center-align" style="font-weight:bold;font-size: 50px;">{{ user.username }}<br></h2>
         <div class="card" style="width:700px;background-color: #34495e;border-radius: 5px;margin: auto 0">
           <div class="card-content white-text">
-            <span class="card-title" style="font-weight: normal">Description</span>
+            <span class="card-title" style="font-weight: bold">Description</span>
             <p style="font-size: 18px;">I am a very simple man. I am good at processing small bits of information.
             I am convenient because I require little food to function effectively.</p><br>
-            <span class="card-title" style="font-weight: normal">Challenges</span>
+            <span class="card-title" style="font-weight: bold">Challenges completed</span>
             <ul>
               {% for challenge in challenges %}
                 <li><a class="grey-text text-lighten-3" href="/challenge/{{ challenge.challenge.id }}">{{ challenge.challenge.name }}</a></li>

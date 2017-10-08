@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-  <title>K-space</title>
+  <title>k-space</title>
   <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="/static/css/materialize.min.css">
@@ -25,18 +25,15 @@
       <div class="row">
 
         <div class="col m8">
-          <h3 class="">Linnar Viigi muruniiduk lahti muukida</h3>
+          <h3 class="">{{ challenge.name }}</h3>
 
           <div>
-            <div class="chip">Electronics</div>
-            <div class="chip">Physics</div>
-            <div class="chip">Robotics</div>
+            {% for tag in challenge.tags.all %}
+              <div class="chip">{{ tag.name }}</div>
+            {% endfor %}
           </div>
 
-          <p style="">Liinar Viik tõi meile muruniiduki, ei tööta, immo on peal.
-            Liinar Viik tõi meile muruniiduki, ei tööta, immo on peal.
-            Liinar Viik tõi meile muruniiduki, ei tööta, immo on peal.
-            Liinar Viik tõi meile muruniiduki, ei tööta, immo on peal.
+          <p style="">{{ challenge.description }}
           </p>
 
           <div class="section">
@@ -56,7 +53,7 @@
             <li class="collection-item avatar">
               <img src="https://vignette.wikia.nocookie.net/southpark/images/0/0d/1a.jpg/revision/latest/scale-to-width-down/310?cb=20100826182516" alt="" class="circle">
               <span class="title">Author</span>
-              <p><b>Eric Cartman</b></p>
+              <p><b>{{ challenge.creator.username }}</b></p>
             </li>
             <li class="collection-item">
               <span class="title">Programming</span>

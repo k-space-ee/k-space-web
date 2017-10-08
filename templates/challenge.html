@@ -20,26 +20,66 @@
 
     <br/><br/><br/>
 
-    <div class="row container challenges">
+    <div class="row container">
 
-      <div class="col s12">
-        <div class="card small">
+      <div class="row">
 
-          <div class="card-content">
-            <div class="card-title">{{ challenge.name }}</div>
-            <p>{{ challenge.description }}</p>
-            </br>
-            <div>
-              {% for tag in challenge.tags.all %}
-                <div class="chip">{{ tag.name }}</div>
-              {% endfor %}
-            </div>
-            </br>
-            <div class="center-align">
-              <a href="#" class="btn-large">I can do it</a>
-            </div>
+        <div class="col m8">
+          <h3 class="">Linnar Viigi muruniiduk lahti muukida</h3>
+
+          <div>
+            <div class="chip">Electronics</div>
+            <div class="chip">Physics</div>
+            <div class="chip">Robotics</div>
           </div>
+
+          <p style="">Liinar Viik tõi meile muruniiduki, ei tööta, immo on peal.
+            Liinar Viik tõi meile muruniiduki, ei tööta, immo on peal.
+            Liinar Viik tõi meile muruniiduki, ei tööta, immo on peal.
+            Liinar Viik tõi meile muruniiduki, ei tööta, immo on peal.
+          </p>
+
+          <div class="section">
+
+            <p>I am usually at k-space on weekends. Come and take a look.</p>
+
+            <div class="valign-wrapper"><i class="material-icons">email</i>&nbsp; eric.cartman@email.com</div>
+            <br>
+            <div class="valign-wrapper"><i class="material-icons">phone</i>&nbsp;55 55 5555</div>
+          </div>
+
         </div>
+
+        <div class="col m4">
+
+          <ul class="collection">
+            <li class="collection-item avatar">
+              <img src="https://vignette.wikia.nocookie.net/southpark/images/0/0d/1a.jpg/revision/latest/scale-to-width-down/310?cb=20100826182516" alt="" class="circle">
+              <span class="title">Author</span>
+              <p><b>Eric Cartman</b></p>
+            </li>
+            <li class="collection-item">
+              <span class="title">Programming</span>
+            </li>
+            <li class="collection-item">
+              <span class="title">Soldering</span>
+            </li>
+          </ul>
+
+          <ul class="collection with-header">
+            <li class="collection-header">
+              <span class="title"><b>What we need</b></span>
+            </li>
+            <li class="collection-item">
+              <span class="">CNC bench experience</span>
+            </li>
+            <li class="collection-item">
+              <span class="title">Screwdriver</span>
+            </li>
+          </ul>
+
+        </div>
+
       </div>
 
     </div>

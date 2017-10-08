@@ -290,12 +290,12 @@
     </div>
     <div class="row challenges">
       {% for challenge in challenges %}
-        <div class="col s12 m3">
+        <div class="col s12 m4 l3">
           <div class="card small">
 
             <div class="card-content">
               <div class="card-title">{{ challenge.name }}</div>
-              <p>{{ challenge.description }}</p>
+              <p style="text-align: justify; max-height: 160px; overflow: auto;">{{ challenge.description }}</p>
               </br>
               <div>
                 {% for tag in challenge.tags.all %}

@@ -90,3 +90,6 @@ a:hover {
 a:active {
     color: black;
 }
+a.highlight:hover{
+  color: #3498db;
+}

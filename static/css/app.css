@@ -14,12 +14,12 @@ footer, .map {
   background-color: #34495e !important;
 }
 
-.card{
+.card {
 	width: 300px;
 	margin: 0 auto;
 }
 
-.progress{
+.progress {
 	height:10px;
 }
 
@@ -27,15 +27,15 @@ a:link {
     color: black;
 }
 
-a:visited{
+a:visited {
     color: black;
 }
 
-a:hover{
+a:hover {
     color: #34495e;
 }
 
-a:active{
+a:active {
     color: black;
 }
 
@@ -44,6 +44,10 @@ ul {
 	line-height: 38px;
 }
 
-.profile{
+.profile {
 	width:300px;
+}
+
+.card.small {
+    height: auto;
 }

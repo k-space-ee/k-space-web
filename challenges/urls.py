@@ -26,7 +26,7 @@ urlpatterns = [
     url(r'^logout/', views.logout_view),
     url(r'^register/', views.register),
     url(r'^challenge/(?P<id>[0-9]+)', views.challenge),
-    url(r'^challenges/', views.dashboard),
+    url(r'^challenges/', views.challenges),
     url(r'^halloffame/', views.hall_of_fame),
     url(r'^profile/(?P<username>[\w.-]+)', views.profile)
 ] + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS) + \

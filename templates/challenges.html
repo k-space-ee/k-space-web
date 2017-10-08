@@ -20,28 +20,39 @@
 
     <br/><br/><br/>
 
+    <!-- dashboard custom -->
+
+    <div class="row container">
+
+      <div class="section slogan">
+        <h2 class="center-align" style="font-weight:bold">Challenges<br></h2>
+      </div>
+
+    </div>
+
     <div class="row container challenges">
 
-      <div class="col s12">
-        <div class="card small">
+      {% for challenge in challenges %}
+        <div class="col s12 m6">
+          <div class="card small">
 
-          <div class="card-content">
-            <div class="card-title">{{ challenge.name }}</div>
-            <p>{{ challenge.description }}</p>
-            </br>
-            <div>
-              {% for tag in challenge.tags.all %}
-                <div class="chip">{{ tag.name }}</div>
-              {% endfor %}
-            </div>
-            </br>
-            <div class="center-align">
-              <a href="#" class="btn-large">I can do it</a>
+            <div class="card-content">
+              <div class="card-title">{{ challenge.name }}</div>
+              <p>{{ challenge.description }}</p>
+              </br>
+              <div>
+                {% for tag in challenge.tags.all %}
+                  <div class="chip">{{ tag.name }}</div>
+                {% endfor %}
+              </div>
+              </br>
+              <div class="center-align">
+                <a href="/challenge/{{ challenge.id }}" class="btn-large">I can do it</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
+      {% endfor %}
     </div>
 
     <!-- dashboard custom -->
@@ -79,8 +90,7 @@
         <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
         </div>
       </div>
-      </footer>
-    </div>
+    </footer>
   </div>
 
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

@@ -57,26 +57,27 @@
           </div>
         </div>
       </div>
+
       <div class="col s12 m2">
       </div>
 
       <div class="col s12 m3 l3" >
         <h2 class="center-align" style="font-weight:bold;font-size: 50px;">{{ user.username }}<br></h2>
         <div class="card" style="width:700px;background-color: #34495e;border-radius: 5px;margin: auto 0">
-            <div class="card-content white-text">
-              <span class="card-title" style="font-weight: normal">Description</span>
-              <p style="font-size: 18px;">I am a very simple man. I am good at processing small bits of information.
-              I am convenient because I require little food to function effectively.</p><br>
-              <span class="card-title" style="font-weight: normal">Challenges</span>
-              <ul>
-                  {% for challenge in challenges %}
-                      <li><a class="grey-text text-lighten-3" href="/challenge/{{ challenge.id }}">{{ challenge.name }}</a></li>
-                  {% empty %}
-                      <li>User has not completed any challenges</li>
-                  {% endfor %}
-                </ul>
-            </div>
+          <div class="card-content white-text">
+            <span class="card-title" style="font-weight: normal">Description</span>
+            <p style="font-size: 18px;">I am a very simple man. I am good at processing small bits of information.
+            I am convenient because I require little food to function effectively.</p><br>
+            <span class="card-title" style="font-weight: normal">Challenges</span>
+            <ul>
+              {% for challenge in challenges %}
+                <li><a class="grey-text text-lighten-3" href="/challenge/{{ challenge.challenge.id }}">{{ challenge.challenge.name }}</a></li>
+              {% empty %}
+                <li>User has not completed any challenges</li>
+              {% endfor %}
+            </ul>
           </div>
+        </div>
       </div>
     </div>
 
@@ -92,7 +93,7 @@
             <h5 class="white-text">Sponsors</h5>
             <p class="grey-text text-lighten-4">
               We have more than 10 companies supporting us financially and by equipment
-            </br>
+            <br>
             <a href="#">I want to become a sponsor</a>
           </p>
 

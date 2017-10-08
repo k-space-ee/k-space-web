@@ -10,6 +10,7 @@ def index(request):
     if request.method == 'GET':
         return render(request, 'index.html')
 
+
 @csrf_protect
 def register(request):
     if request.method == 'GET':
@@ -61,27 +62,32 @@ def logout_view(request):
 
 def challenge(request, id):
     if request.method == 'GET':
-        return render(request, 'challenge.html')
+        data = {
+            'challenge': Challenge.objects.get(id=id)
+        }
+        return render(request, 'challenge.html', data)
     elif request.method == 'POST':
         if not request.user.is_authenticated:
             return HttpResponse('not logged in')
         challenge_name = request.POST['challenge_name']
         challenge_description = request.POST['challenge_discription']
         tags = []
-        challenge = Challenge(creator=request.user, name=challenge_name, description=challenge_description, tags=tags)
-        challenge.save()
+        new_challenge = Challenge(creator=request.user, name=challenge_name, description=challenge_description, tags=tags)
+        new_challenge.save()
 
 
-def dashboard(request):
+def challenges(request):
     if request.method == 'GET':
-        data = {'challenges': Challenge.objects.all()}
-        return render(request, 'dashboard.html', data)
+        data = {
+            'challenges': Challenge.objects.all()
+        }
+        return render(request, 'challenges.html', data)
 
 
 def hall_of_fame(request):
     if request.method == 'GET':
         data = {
-            'users': User.objects.all()
+            'users': sorted(User.objects.all(), key=lambda x: len(UserChallenge.objects.filter(user=x)), reverse=True)
         }
         return render(request, 'hall_of_fame.html', data)
 
@@ -89,9 +95,9 @@ def hall_of_fame(request):
 def profile(request, username=''):
     if request.method == 'GET':
         user = User.objects.get(username=username)
-        challenges = UserChallenge.objects.filter(user=user)
+        user_challenges = UserChallenge.objects.filter(user=user)
         data = {
             'user': user,
-            'challenges': challenges
+            'challenges': user_challenges
         }
         return render(request, 'profile.html', data)

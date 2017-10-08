@@ -8,7 +8,10 @@ from .models import *
 
 def index(request):
     if request.method == 'GET':
-        return render(request, 'index.html')
+        data = {
+            'challenges': Challenge.objects.all()
+        }
+        return render(request, 'index.html', data)
 
 
 @csrf_protect

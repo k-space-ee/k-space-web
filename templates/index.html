@@ -289,58 +289,24 @@
       </div>
     </div>
     <div class="row challenges">
-      <div class="col s12 m3">
-        <div class="card small">
-          <div class="card-content">
-            <div class="card-title">name here</div>
-            <p>Description here</p>
-            </br>
-            <div>
-              <div class="chip">security</div>
+      {% for challenge in challenges %}
+        <div class="col s12 m3">
+          <div class="card small">
+
+            <div class="card-content">
+              <div class="card-title">{{ challenge.name }}</div>
+              <p>{{ challenge.description }}</p>
+              </br>
+              <div>
+                {% for tag in challenge.tags.all %}
+                  <div class="chip">{{ tag.name }}</div>
+                {% endfor %}
+              </div>
+              </br>
             </div>
-            </br>
           </div>
         </div>
-      </div>
-      <div class="col s12 m3">
-        <div class="card small">
-          <div class="card-content">
-            <div class="card-title">name here</div>
-            <p>Description here</p>
-            </br>
-            <div>
-              <div class="chip">security</div>
-            </div>
-            </br>
-          </div>
-        </div>
-      </div>
-      <div class="col s12 m3">
-        <div class="card small">
-          <div class="card-content">
-            <div class="card-title">name here</div>
-            <p>Description here</p>
-            </br>
-            <div>
-              <div class="chip">security</div>
-            </div>
-            </br>
-          </div>
-        </div>
-      </div>
-      <div class="col s12 m3">
-        <div class="card small">
-          <div class="card-content">
-            <div class="card-title">name here</div>
-            <p>Description here</p>
-            <br>
-            <div>
-              <div class="chip">security</div>
-            </div>
-            <br>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
     <br>
     <div class="row">

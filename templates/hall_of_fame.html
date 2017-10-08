@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="/static/css/materialize.min.css">
   <link rel="stylesheet" href="/static/css/app.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -41,27 +42,26 @@
                   <a href="/profile/{{ user.username }}"><img src='/media/{{ user.profile.icon }}'></a>
               </div>
                 <h5 class="card-title" style="padding-top: 10px;color:black;"><a href="/profile/{{ user.username }}"><b>{{ user.username }}</b></a></h5>
-              <div class="col s12 m1">
-                <a href="#"><img src="https://images.vexels.com/media/users/3/143424/isolated/preview/2aa6cd7edd894a7cefa4eaf0f5916ee9-lightning-bolt-small-by-vexels.png" width="15" height="15" alt=""></a>
-              </div>
-              <div class="col s12 m10">
-                <div class="progress" style="background-color: #f1f1f1">
-                  <div class="determinate" style="width: 70%; background-color:#ffc107;"></div>
-                </div>
-              </div>
-              <br>
-              
-              <div class="col s12 m1">
-                <a href="#"><img src="https://www.chowan.edu/sites/chowan.edu/files/www/info-areas/sidebar-images/it-help-desk-logo.png" width="15" height="15" alt=""></a>
-              </div>
-              <div class="col s12 m10">
-                <div class="progress" style="background-color: #f1f1f1">
-                  <div class="determinate" style="width: 70%; background-color:#3498db;"></div>
-                </div>
-              </div>
+                <div class="row">
+                    <div class="col s12 m1">
+                        <i class="material-icons" style="font-size: 20px; padding-right: 5px; color: black">flash_on</i>
+                    </div>
+                    <div class="col s12 m10">
+                        <div class="progress" style="background-color: #f1f1f1">
+                            <div class="determinate" style="width: 70%; background-color:#ffc107;"></div>
+                        </div>
+                    </div>
+                    </div>
 
-              <div class="progress" style="background-color:#fff">
-                <div class="determinate" style="width: 70%; background-color:#ffffff;"></div>
+              <div class="row">
+                  <div class="col s12 m1">
+                    <i class="material-icons" style="font-size: 20px; padding-right: 5px; color: black">computer</i>
+                  </div>
+                  <div class="col s12 m10">
+                      <div class="progress" style="background-color: #f1f1f1">
+                          <div class="determinate" style="width: 70%; background-color:#3498db;"></div>
+                      </div>
+                  </div>
               </div>
             </div>
           </div>

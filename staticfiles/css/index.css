@@ -70,3 +70,19 @@ ul {
 #svgtext{
     font-size: 20pt;
 }
+
+a:link {
+    color: white;
+}
+
+a:visited {
+    color: white;
+}
+
+a:hover {
+    color: #34495e;
+}
+
+a:active {
+    color: black;
+}

@@ -9,7 +9,7 @@ from .models import *
 def index(request):
     if request.method == 'GET':
         data = {
-            'challenges': Challenge.objects.all()
+            'challenges': Challenge.objects.all()[:4]
         }
         return render(request, 'index.html', data)
 

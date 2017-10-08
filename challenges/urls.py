@@ -17,6 +17,8 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.staticfiles.storage import staticfiles_storage
+from django.views.generic.base import RedirectView
 from challenges import views
 
 urlpatterns = [
@@ -28,6 +30,8 @@ urlpatterns = [
     url(r'^challenge/(?P<id>[0-9]+)', views.challenge),
     url(r'^challenges/', views.challenges),
     url(r'^halloffame/', views.hall_of_fame),
-    url(r'^profile/(?P<username>[\w.-]+)', views.profile)
+    url(r'^profile/(?P<username>[\w.-]+)', views.profile),
+    url(r'^favicon.ico$', RedirectView.as_view(url=staticfiles_storage.url('favicon.ico'), permanent=False), name='favicon')
 ] + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS) + \
     static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

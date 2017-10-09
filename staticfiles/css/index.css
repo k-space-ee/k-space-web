@@ -72,14 +72,10 @@ ul {
 }
 
 #svgtext{
-    font-size: 20pt;
+    font-size: 14pt;
 }
 
-a:link {
-    color: white;
-}
-
-a:visited {
+a:link, a:visited {
     color: white;
 }
 

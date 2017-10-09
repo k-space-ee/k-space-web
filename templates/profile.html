@@ -1,116 +1,56 @@
-    <!DOCTYPE html>
-    <html>
-
-    <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-      <title>k-space</title>
-      <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <link rel="stylesheet" href="/static/css/materialize.min.css">
-      <link rel="stylesheet" href="/static/css/app.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    </head>
-
-    <body>
-      <div id="container" class="grey lighten-4">
-
-        <div class="header section center-align">
-          <h1 class="section z-depth-1 white-text"><a href="/">k-space.ee</a></h1>
+{% extends 'base.html' %}
+{% block content %}
+  <div class="row container section">
+    <div class="col s12 m12 l12">
+      <h2 class="header center-align">{{ user.username }}</h2>
+      <div class="card horizontal" style="width:100%;">
+        <div class="card-image">
+          <img src="/media/{{ user.profile.icon }}">
         </div>
-
-        <div class="row container section">
-          <div class="col s12 m12 l12">
-        <h2 class="header center-align">{{ user.username }}</h2>
-        <div class="card horizontal" style="width:100%;">
-          <div class="card-image">
-            <img src="/media/{{ user.profile.icon }}">
-          </div>
-          <div class="card-stacked">
-            <div class="card-content">
-              <span class="card-title" style="font-weight: bold">Description</span>
-              <p style="font-size: 18px;text-align: justify">I am a very simple man. I am good at processing small bits of information.
+        <div class="card-stacked">
+          <div class="card-content">
+            <span class="card-title" style="font-weight: bold">Description</span>
+            <p style="font-size: 18px;text-align: justify">I am a very simple man. I am good at processing small bits of
+              information.
               I am convenient because I require little food to function effectively.</p><br>
-              <span class="card-title" style="font-weight: bold">Challenges completed</span>
-              <ul>
-                {% for challenge in challenges %}
-                  <li><a class="grey-text text-lighten-3" href="/challenge/{{ challenge.challenge.id }}">{{ challenge.challenge.name }}</a></li>
-                {% empty %}
-                  <li>User has not completed any challenges</li>
-                {% endfor %}
-              </ul>
+            <span class="card-title" style="font-weight: bold">Challenges completed</span>
+            <ul>
+              {% for challenge in challenges %}
+                <li><a class="darklink"
+                       href="/challenge/{{ challenge.challenge.id }}">{{ challenge.challenge.name }}</a></li>
+              {% empty %}
+                <li>User has not completed any challenges</li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col s1 m1 l1">
+              <i class="material-icons" style="font-size: 20px;padding-left:50%;">flash_on</i>
             </div>
-            <div class="row">
-                  <div class="col s1 m1 l1">
-                      <i class="material-icons" style="font-size: 20px;padding-left:50%;">flash_on</i>
-                  </div>
-                  <div class="col s9 m9 l10">
-                    <div class="progress" style="background-color: #f1f1f1;width:100%;">
-                      <div class="determinate" style="width: 30%; background-color:#ffc107;"></div>
-                    </div>
-                  </div>
-                  <div class="col s1 m1 l1" >
-                    <span style="color: #ffc107;">3</span>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col s1 m1 l1">
-                      <i class="material-icons" style="font-size: 20px;padding-left:50%">computer</i>
-                  </div>
-                  <div class="col s9 m19 l10">
-                    <div class="progress" style="background-color: #f1f1f1;width:100%">
-                      <div class="determinate" style="width: 70%; background-color:#3498db;"></div>
-                    </div>
-                  </div>
-                  <div class="col s1 m1 l1">
-                    <span style="color:#3498db;">7</span>
-                  </div>
-                </div>
+            <div class="col s9 m9 l10">
+              <div class="progress" style="background-color: #f1f1f1;width:100%;">
+                <div class="determinate" style="width: 30%; background-color:#ffc107;"></div>
+              </div>
+            </div>
+            <div class="col s1 m1 l1">
+              <span style="color: #ffc107;">3</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s1 m1 l1">
+              <i class="material-icons" style="font-size: 20px;padding-left:50%">computer</i>
+            </div>
+            <div class="col s9 m19 l10">
+              <div class="progress" style="background-color: #f1f1f1;width:100%">
+                <div class="determinate" style="width: 70%; background-color:#3498db;"></div>
+              </div>
+            </div>
+            <div class="col s1 m1 l1">
+              <span style="color:#3498db;">7</span>
+            </div>
           </div>
         </div>
       </div>
-        </div>
-
-        <footer class="page-footer">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Contact</h5>
-                <p class="grey-text text-lighten-4">
-                  <i class="material-icons">phone</i>&nbsp;Call Lauri 55 55 5555
-                </p>
-
-                <h5 class="white-text">Sponsors</h5>
-                <p class="grey-text text-lighten-4">
-                  We have more than 10 companies supporting us financially and by equipment
-                <br>
-                <a class="highlight" href="#">I want to become a sponsor</a>
-              </p>
-
-            </div>
-            <div class="col l4 offset-l2 s12">
-              <h5 class="white-text">Links</h5>
-              <ul>
-                <li><a class="highlight" href="#!">Location</a></li>
-                <li><a class="highlight" href="#!">Mission</a></li>
-                <li><a class="highlight" href="#!">People</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="footer-copyright">
-          <div class="container">
-            © 2017 k-space
-            <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
-          </div>
-        </div>
-      </footer>
-
     </div>
-
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
-    <script src="/static/js/app.js"></script>
-    </body>
-
-    </html>
+  </div>
+{% endblock %}

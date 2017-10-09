@@ -1,104 +1,40 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-  <title>k-space</title>
-  <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="/static/css/materialize.min.css">
-  <link rel="stylesheet" href="/static/css/app.css">
-</head>
-
-<body>
-  <div id="container" class="grey lighten-4">
-
-    <div class="header section center-align">
-      <h1 class="section darken-2 z-depth-1 white-text"><a href="/">k-space.ee</a></h1>
+{% extends 'base.html' %}
+{% block content %}
+  <div class="row container">
+    <div class="section slogan">
+      <h2 class="center-align" style="font-weight:bold">Challenges<br></h2>
     </div>
+  </div>
 
-    <!-- dashboard custom -->
-
-    <div class="row container">
-      <div class="section slogan">
-        <h2 class="center-align" style="font-weight:bold">Challenges<br></h2>
-      </div>
-    </div>
-
-    <div class="row container challenges">
-        <div class="row">
-          {% for challenge in challenges %}
-            <div class="col s12 m4">
-              <div class="card" style="height:350px;">
-                <div class="card-content">
-                    <div class="row" style="height:210px;">
-                        <div class="col s12 m12">
-                            <div class="card-title"><b>{{ challenge.name }}</b></div>
-                            <p style="text-align: justify; max-height: 120px; overflow: auto;">{{ challenge.description }}</p>
-                            <div style="padding-top: 15px;">
-                                {% for tag in challenge.tags.all %}
-                                    <div class="chip">{{ tag.name }}</div>
-                                {% endfor %}
-                            </div>
-                        </div>
-                    </div>
-                    </br>
-                    <div class="row">
-                        <div class="col s12 m12">
-                          <div class="center-align">
-                            <a href="/challenge/{{ challenge.id }}" class="btn-large">I can do it</a>
-                          </div>
-                        </div>
-                    </div>
+  <div class="row container challenges">
+    <div class="row">
+      {% for challenge in challenges %}
+        <div class="col s12 m4">
+          <div class="card" style="height:350px;">
+            <div class="card-content">
+              <div class="row" style="height:210px;">
+                <div class="col s12 m12">
+                  <div class="card-title"><b>{{ challenge.name }}</b></div>
+                  <p style="text-align: justify; max-height: 120px; overflow: auto;">{{ challenge.description }}</p>
+                  <div style="padding-top: 15px;">
+                    {% for tag in challenge.tags.all %}
+                      <div class="chip">{{ tag.name }}</div>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+              </br>
+              <div class="row">
+                <div class="col s12 m12">
+                  <div class="center-align">
+                    <a href="/challenge/{{ challenge.id }}" class="btn-large">I can do it</a>
+                  </div>
                 </div>
               </div>
             </div>
-          {% endfor %}
+          </div>
         </div>
+      {% endfor %}
     </div>
-
-    <!-- dashboard custom -->
-
-    <footer class="page-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">Contact</h5>
-            <p class="grey-text text-lighten-4">
-              <i class="material-icons">phone</i>&nbsp;Call Lauri 55 55 5555
-            </p>
-
-            <h5 class="white-text">Sponsors</h5>
-            <p class="grey-text text-lighten-4">
-              We have more than 10 companies supporting us financially and by equipment
-              </br>
-              <a class="highlight" href="#">I want to become a sponsor</a>
-            </p>
-
-          </div>
-          <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Links</h5>
-            <ul>
-              <li><a class="highlight" href="#!">Location</a></li>
-              <li><a class="highlight" href="#!">Mission</a></li>
-              <li><a class="highlight" href="#!">People</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-copyright">
-        <div class="container">
-        © 2017 k-space
-        <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
-        </div>
-      </div>
-    </footer>
   </div>
-
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
-  <script src="/static/js/app.js"></script>
-</body>
-
-</html>
+{% endblock %}

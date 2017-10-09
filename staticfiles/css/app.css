@@ -27,11 +27,7 @@ footer, .map {
     margin-top: 30px;
 }
 
-a:link {
-    color: white;
-}
-
-a:visited {
+a:link, a:visited {
     color: white;
 }
 
@@ -57,11 +53,15 @@ ul {
     height: auto;
 }
 
-.namelink, .namelink:visited {
+.darklink:link, .darklink:visited {
     color: black;
 }
 
-.namelink:hover {
+.darklink:hover {
+    color: #34495e;
+}
+
+.darklink:active {
     color: #3498db;
 }
 

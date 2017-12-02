@@ -44,7 +44,7 @@ class ChallengeTag(models.Model):
 
 class Challenge(models.Model):
     id = models.AutoField(primary_key=True)
-    creator = models.ForeignKey(User)
+    creator = models.ForeignKey(User, blank=True, null=True, editable=False)
     name = models.CharField(max_length=256)
     description = models.TextField(blank=True)
     tags = models.ManyToManyField(ChallengeTag, blank=True)

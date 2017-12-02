@@ -44,7 +44,7 @@ class ChallengeTag(models.Model):
 
 class Challenge(models.Model):
     id = models.AutoField(primary_key=True)
-    creator = models.ForeignKey(User, blank=True, null=True, editable=False)
+    creator = models.ForeignKey(User, blank=True, null=True, editable=False, on_delete=models.CASCADE)
     name = models.CharField(max_length=256)
     description = models.TextField(blank=True)
     tags = models.ManyToManyField(ChallengeTag, blank=True)
@@ -55,13 +55,13 @@ class Challenge(models.Model):
 
 class UserChallenge(models.Model):
     id = models.AutoField(primary_key=True)
-    user = models.ForeignKey(User)
-    challenge = models.ForeignKey(Challenge)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    challenge = models.ForeignKey(Challenge, on_delete=models.CASCADE)
 
 
 class InventoryItemLocation(models.Model):
     id = models.AutoField(primary_key=True)
-    parent = models.ForeignKey("self", blank=True, null=True)
+    parent = models.ForeignKey("self", blank=True, null=True, on_delete=models.CASCADE)
     address = models.BooleanField(default=True)
     location = models.CharField(max_length=256)
     gps_location = PlainLocationField(based_fields=['location'], blank=True, null=True)
@@ -79,9 +79,9 @@ class InventoryItem(models.Model):
     created_time = models.DateTimeField(auto_now_add=True)
     updated_time = models.DateTimeField(auto_now=True)
     destroyedTime = models.DateTimeField(blank=True, null=True)
-    creator = models.ForeignKey(User, related_name="%(class)s_created", blank=True, null=True, editable=False)
-    location = models.ForeignKey(InventoryItemLocation, blank=True, null=True)
-    owner = models.ForeignKey(User, related_name="%(class)s_item", blank=True, null=True)
+    creator = models.ForeignKey(User, related_name="%(class)s_created", blank=True, null=True, editable=False, on_delete=models.CASCADE)
+    location = models.ForeignKey(InventoryItemLocation, blank=True, null=True, on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, related_name="%(class)s_item", blank=True, null=True, on_delete=models.CASCADE)
     value = models.IntegerField(blank=True, null=True)
     item_name = models.CharField(max_length=256)
     description = models.TextField(blank=True, null=True)

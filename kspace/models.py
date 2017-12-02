@@ -22,17 +22,6 @@ class Profile(models.Model):
         return self.user.username
 
 
-@receiver(post_save, sender=User)
-def create_user_profile(sender, instance, created, **kwargs):
-    if created:
-        Profile.objects.create(user=instance)
-
-
-@receiver(post_save, sender=User)
-def save_user_profile(sender, instance, **kwargs):
-    instance.profile.save()
-
-
 class ChallengeTag(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=32)
@@ -59,6 +48,17 @@ class UserChallenge(models.Model):
     challenge = models.ForeignKey(Challenge, on_delete=models.CASCADE)
 
 
+class InventoryItemOwner(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True, editable=False)
+    name = models.CharField(max_length=64)
+
+    def __str__(self):
+        if self.user is not None:
+            return self.user.username
+        else:
+            return self.name
+
+
 class InventoryItemLocation(models.Model):
     id = models.AutoField(primary_key=True)
     parent = models.ForeignKey("self", blank=True, null=True, on_delete=models.CASCADE)
@@ -72,20 +72,33 @@ class InventoryItemLocation(models.Model):
 
 class InventoryItem(models.Model):
     id = models.AutoField(primary_key=True)
+    item_name = models.CharField(max_length=256)
     id_code = models.CharField(max_length=32, default='0123456789')
-    serial_nr = models.CharField(max_length=32, default='0123456789')
+    serial_nr = models.CharField(max_length=32, default='0123456789', blank=True, null=True)
+    owner = models.ForeignKey(InventoryItemOwner , related_name="%(class)s_item", blank=True, null=True, on_delete=models.CASCADE)
+    value = models.IntegerField(blank=True, null=True)
+    location = models.ForeignKey(InventoryItemLocation, blank=True, null=True, on_delete=models.CASCADE)
     usable = models.BooleanField(default=True)
     fixable = models.BooleanField()
     created_time = models.DateTimeField(auto_now_add=True)
     updated_time = models.DateTimeField(auto_now=True)
     destroyedTime = models.DateTimeField(blank=True, null=True)
     creator = models.ForeignKey(User, related_name="%(class)s_created", blank=True, null=True, editable=False, on_delete=models.CASCADE)
-    location = models.ForeignKey(InventoryItemLocation, blank=True, null=True, on_delete=models.CASCADE)
-    owner = models.ForeignKey(User, related_name="%(class)s_item", blank=True, null=True, on_delete=models.CASCADE)
-    value = models.IntegerField(blank=True, null=True)
-    item_name = models.CharField(max_length=256)
     description = models.TextField(blank=True, null=True)
     photo = models.ImageField(upload_to=get_inventory_item_path, blank=True, null=True)
 
     def __str__(self):
-        return self.title
+        return self.item_name
+
+
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
+        InventoryItemOwner.objects.create(user=instance)
+
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+    instance.profile.save()
+    instance.inventoryitemowner.save()

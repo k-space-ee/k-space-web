@@ -10,8 +10,8 @@ def get_profile_image_path(instance, filename):
     return os.path.join('icons', str(instance.id), filename)
 
 
-def get_inventory_item_path(filename):
-    return os.path.join('inventory', filename)
+def get_inventory_item_path(instance, filename):
+    return os.path.join('inventory', str(instance.id))
 
 
 class Profile(models.Model):

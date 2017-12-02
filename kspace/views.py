@@ -1,8 +1,5 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.views.decorators.csrf import csrf_protect
-from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login, logout
 from kspace.models import *
 
 
@@ -36,6 +33,14 @@ def challenges(request):
             'challenges': Challenge.objects.all()
         }
         return render(request, 'challenges.html', data)
+
+
+def inventory(request):
+    if request.method == 'GET':
+        data = {
+            'inventory': InventoryItem.objects.all()
+        }
+        return render(request, 'inventory.html', data)
 
 
 def hall_of_fame(request):

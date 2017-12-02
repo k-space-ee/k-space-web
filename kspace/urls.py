@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^challenge/(?P<id>[0-9]+)', views.challenge),
     url(r'^challenges/', views.challenges),
     url(r'^halloffame/', views.hall_of_fame),
+    url(r'^inventory/', views.inventory),
     url(r'^profile/(?P<username>[\w.-]+)', views.profile),
     url(r'^favicon.ico$', RedirectView.as_view(url=staticfiles_storage.url('favicon.ico'), permanent=False), name='favicon')
 ] + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS) + \

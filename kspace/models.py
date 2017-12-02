@@ -36,9 +36,11 @@ class ChallengeTag(models.Model):
 class Challenge(models.Model):
     id = models.AutoField(primary_key=True)
     creator = models.ForeignKey(User, blank=True, null=True, editable=False, on_delete=models.SET_NULL)
-    name = models.CharField(max_length=256)
+    name = models.CharField(max_length=64)
+    blurb = models.CharField(max_length=140, blank=True, null=True  )
     description = models.TextField(blank=True, null=True)
     tags = models.ManyToManyField(ChallengeTag, blank=True)
+    recurring = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

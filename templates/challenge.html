@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+
+{% load markdownify %}
+
 {% block content %}
   <div class="row container">
     <div class="row">
@@ -11,44 +14,60 @@
           {% endfor %}
         </div>
 
-        <p style="">{{ challenge.description }}
-        </p>
+        <p style="">{{ challenge.description | markdownify }}</p>
 
         <div class="section">
-          <p>I am usually at k-space on weekends. Come and take a look.</p>
-          <div class="valign-wrapper"><i class="material-icons">email</i>&nbsp; eric.cartman@email.com</div>
-          <br>
-          <div class="valign-wrapper"><i class="material-icons">phone</i>&nbsp;55 55 5555</div>
+          {% if challenge.creator.profile.contact_info %}
+            <p>{{ challenge.creator.profile.contact_info }}</p>
+          {% endif %}
+          {% if challenge.creator.email %}
+            <div class="valign-wrapper"><i class="material-icons">email</i>&nbsp;{{ challenge.creator.email }}</div>
+            <br>
+          {% endif %}
+          {% if challenge.creator.profile.phone_number %}
+            <div class="valign-wrapper"><i class="material-icons">phone</i>&nbsp;{{ challenge.creator.profile.phone_number }}</div>
+          {% endif %}
         </div>
       </div>
 
       <div class="col m4">
         <ul class="collection">
           <li class="collection-item avatar">
-            <img src="https://vignette.wikia.nocookie.net/southpark/images/0/0d/1a.jpg/revision/latest/scale-to-width-down/310?cb=20100826182516"
+            <img src="/media/{{ challenge.creator.profile.icon }}"
                  alt="" class="circle">
             <span class="title">Author</span>
             <p><b>{{ challenge.creator.username }}</b></p>
           </li>
-          <li class="collection-item">
-            <span class="title">Programming</span>
-          </li>
-          <li class="collection-item">
-            <span class="title">Soldering</span>
-          </li>
+
         </ul>
 
-        <ul class="collection with-header">
-          <li class="collection-header">
-            <span class="title"><b>What we need</b></span>
-          </li>
-          <li class="collection-item">
-            <span class="">CNC bench experience</span>
-          </li>
-          <li class="collection-item">
-            <span class="title">Screwdriver</span>
-          </li>
-        </ul>
+        {% if challenge.tags|length > 0 %}
+          <ul class="collection with-header">
+            <li class="collection-header">
+              <span class="title"><b>Tags</b></span>
+            </li>
+
+            {% for tag in challenge.tags.all %}
+              <li class="collection-item">
+                <span class="">{{ tag.name }}</span>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        {% if challenge.tags|length > 0 %}
+          <ul class="collection with-header">
+            <li class="collection-header">
+              <span class="title"><b>Tags</b></span>
+            </li>
+
+            {% for tag in challenge.tags.all %}
+              <li class="collection-item">
+                <span class="">{{ tag.name }}</span>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
       </div>
     </div>
   </div>

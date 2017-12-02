@@ -33,7 +33,7 @@ class ChallengeTag(models.Model):
 
 class Challenge(models.Model):
     id = models.AutoField(primary_key=True)
-    creator = models.ForeignKey(User, blank=True, null=True, editable=False, on_delete=models.CASCADE)
+    creator = models.ForeignKey(User, blank=True, null=True, editable=False, on_delete=models.SET_NULL)
     name = models.CharField(max_length=256)
     description = models.TextField(blank=True)
     tags = models.ManyToManyField(ChallengeTag, blank=True)
@@ -44,8 +44,8 @@ class Challenge(models.Model):
 
 class UserChallenge(models.Model):
     id = models.AutoField(primary_key=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    challenge = models.ForeignKey(Challenge, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL)
+    challenge = models.ForeignKey(Challenge, blank=True, null=True, on_delete=models.SET_NULL)
 
 
 class InventoryItemOwner(models.Model):
@@ -61,7 +61,7 @@ class InventoryItemOwner(models.Model):
 
 class InventoryItemLocation(models.Model):
     id = models.AutoField(primary_key=True)
-    parent = models.ForeignKey("self", blank=True, null=True, on_delete=models.CASCADE)
+    parent = models.ForeignKey("self", blank=True, null=True, on_delete=models.SET_NULL)
     address = models.BooleanField(default=True)
     location = models.CharField(max_length=256)
     gps_location = PlainLocationField(based_fields=['location'], blank=True, null=True)
@@ -73,17 +73,16 @@ class InventoryItemLocation(models.Model):
 class InventoryItem(models.Model):
     id = models.AutoField(primary_key=True)
     item_name = models.CharField(max_length=256)
-    id_code = models.CharField(max_length=32, default='0123456789')
-    serial_nr = models.CharField(max_length=32, default='0123456789', blank=True, null=True)
-    owner = models.ForeignKey(InventoryItemOwner , related_name="%(class)s_item", blank=True, null=True, on_delete=models.CASCADE)
+    serial_nr = models.CharField(max_length=32, default='', blank=True, null=True)
+    owner = models.ForeignKey(InventoryItemOwner , related_name="%(class)s_item", blank=True, null=True, on_delete=models.SET_NULL)
     value = models.IntegerField(blank=True, null=True)
-    location = models.ForeignKey(InventoryItemLocation, blank=True, null=True, on_delete=models.CASCADE)
+    location = models.ForeignKey(InventoryItemLocation, blank=True, null=True, on_delete=models.SET_NULL)
     usable = models.BooleanField(default=True)
     fixable = models.BooleanField()
-    created_time = models.DateTimeField(auto_now_add=True)
-    updated_time = models.DateTimeField(auto_now=True)
-    destroyedTime = models.DateTimeField(blank=True, null=True)
-    creator = models.ForeignKey(User, related_name="%(class)s_created", blank=True, null=True, editable=False, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    destroyed = models.DateTimeField(blank=True, null=True)
+    creator = models.ForeignKey(User, related_name="%(class)s_created", blank=True, null=True, editable=False, on_delete=models.SET_NULL)
     description = models.TextField(blank=True, null=True)
     photo = models.ImageField(upload_to=get_inventory_item_path, blank=True, null=True)
 

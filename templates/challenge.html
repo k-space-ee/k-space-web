@@ -8,12 +8,6 @@
       <div class="col m8">
         <h3 class="">{{ challenge.name }}</h3>
 
-        <div>
-          {% for tag in challenge.tags.all %}
-            <div class="chip">{{ tag.name }}</div>
-          {% endfor %}
-        </div>
-
         <p style="">{{ challenge.description | markdownify }}</p>
 
         <div class="section">
@@ -25,7 +19,8 @@
             <br>
           {% endif %}
           {% if challenge.creator.profile.phone_number %}
-            <div class="valign-wrapper"><i class="material-icons">phone</i>&nbsp;{{ challenge.creator.profile.phone_number }}</div>
+            <div class="valign-wrapper"><i
+                    class="material-icons">phone</i>&nbsp;{{ challenge.creator.profile.phone_number }}</div>
           {% endif %}
         </div>
       </div>
@@ -41,33 +36,31 @@
 
         </ul>
 
-        {% if challenge.tags|length > 0 %}
-          <ul class="collection with-header">
-            <li class="collection-header">
-              <span class="title"><b>Tags</b></span>
+        <ul class="collection with-header">
+          <li class="collection-header">
+            <span class="title"><b>Tags</b></span>
+          </li>
+
+          {% for tag in challenge.tags.all %}
+            <li class="collection-item">
+              <span class="">{{ tag.name }}</span>
             </li>
+          {% endfor %}
+        </ul>
 
-            {% for tag in challenge.tags.all %}
+        <ul class="collection with-header">
+          <li class="collection-header">
+            <span class="title"><b>Inventory Items</b></span>
+          </li>
+
+          {% for item in challenge.required_items.all %}
+            {% if not item.hidden %}
               <li class="collection-item">
-                <span class="">{{ tag.name }}</span>
+                <span class="">{{ item.item_name }}</span>
               </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-
-        {% if challenge.tags|length > 0 %}
-          <ul class="collection with-header">
-            <li class="collection-header">
-              <span class="title"><b>Tags</b></span>
-            </li>
-
-            {% for tag in challenge.tags.all %}
-              <li class="collection-item">
-                <span class="">{{ tag.name }}</span>
-              </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
+            {% endif %}
+          {% endfor %}
+        </ul>
       </div>
     </div>
   </div>

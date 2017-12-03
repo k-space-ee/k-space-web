@@ -105,7 +105,7 @@ db.sqlite3
 tasks.xml
 
 media/icons
-challenges/migrations
+*/migrations
 static/
 
 #PyCharm files

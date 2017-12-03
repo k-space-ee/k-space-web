@@ -23,7 +23,8 @@ def challenge(request, id):
         challenge_name = request.POST['challenge_name']
         challenge_description = request.POST['challenge_discription']
         tags = []
-        new_challenge = Challenge(creator=request.user, name=challenge_name, description=challenge_description, tags=tags)
+        new_challenge = Challenge(creator=request.user, name=challenge_name, description=challenge_description,
+                                  tags=tags)
         new_challenge.save()
 
 

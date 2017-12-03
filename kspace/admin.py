@@ -12,7 +12,7 @@ class ChallengeAdmin(admin.ModelAdmin):
 
 
 class InventoryItemAdmin(admin.ModelAdmin):
-    list_display = ('item_name', 'serial_nr', 'usable', 'owner', 'creator',)
+    list_display = ('item_name', 'serial_nr', 'hidden', 'usable', 'owner', 'creator',)
 
     def save_model(self, request, obj, form, change):
         if getattr(obj, 'creator', None) is None:

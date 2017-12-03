@@ -1,0 +1,101 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+  viewBox="0 0 802.7 239.1" style="enable-background:new 0 0 802.7 239.1;">
+  <style type="text/css">
+    .st0 {
+      fill: #26719B;
+      stroke: #34495E;
+      stroke-width: 5;
+      stroke-miterlimit: 10;
+    }
+
+    .st1 {
+      fill: #3498DB;
+      stroke: #34495E;
+      stroke-width: 5;
+      stroke-miterlimit: 10;
+    }
+
+    .st1:hover {
+      fill: #77b9e7;
+      transition: fill 0.3s;
+    }
+
+    .st3 {
+      fill: #ECF0F1;
+      stroke: #ECF0F1;
+      stroke-width: 0.5;
+      stroke-miterlimit: 10;
+    }
+
+    .st4 {
+      fill: none;
+      stroke: #ECF0F1;
+      stroke-miterlimit: 10;
+    }
+  </style>
+  <g>
+    <g>
+      <rect x="67.2" y="70.6" class="st0" width="265.8" height="29.8"/>
+      <rect x="399.4" y="70.6" class="st0" width="265.8" height="29.8"/>
+    </g>
+    <g>
+      <rect x="0" y="100.9" class="st1" width="333" height="40.2"/>
+      <rect x="67.2" y="141.2" class="st1" width="66.4" height="66.4"/>
+      <rect x="0" y="176.4" class="st1" width="67.2" height="31.2"/>
+      <rect x="133.6" y="141.2" class="st1" width="66.4" height="66.4"/>
+      <rect x="333" y="141.2" class="st1" width="66.4" height="66.4"/>
+      <polygon class="st1" points="33.6,100.4 0,100.4 0,46.3 14.3,31.5 33.6,31.5 		"/>
+      <rect x="398.9" y="100.4" class="st1" width="265.8" height="40.2"/>
+      <rect x="531.8" y="140.6" class="st1" width="66.4" height="66.4"/>
+      <rect x="598.3" y="140.6" class="st1" width="66.4" height="66.4"/>
+      <polygon class="st1" points="698.3,100.4 664.7,100.4 664.7,46.3 679,31.5 698.3,31.5 		"/>
+      <rect x="333" y="100.9" class="st1" width="66.4" height="40.2"/>
+      <polygon class="st1" points="365.3,100.4 398.9,100.4 398.9,46.3 384.6,31.5 365.3,31.5 		"/>
+      <polygon class="st1" points="769.2,207.1 732.2,207.1 732.2,140.6 664.7,140.6 664.7,100.4 769.2,100.4 		"/>
+    </g>
+    <g>
+      <line class="st4" x1="16.3" y1="65.9" x2="16.3" y2="0"/>
+      <ellipse class="st3" cx="16.3" cy="65.9" rx="4" ry="3.9"/>
+    </g>
+    <g>
+      <line class="st4" x1="166" y1="121.1" x2="166" y2="-0.2"/>
+      <ellipse class="st3" cx="166" cy="121.1" rx="4" ry="3.9"/>
+    </g>
+    <g>
+      <line class="st4" x1="565" y1="120.6" x2="565" y2="-0.7"/>
+      <ellipse class="st3" cx="565" cy="120.6" rx="4" ry="3.9"/>
+    </g>
+    <g>
+      <polyline class="st4" points="382.1,66 348.6,66 348.6,0 		"/>
+      <ellipse class="st3" cx="382.1" cy="66" rx="3.9" ry="4"/>
+    </g>
+    <g>
+      <line class="st4" x1="681.5" y1="65.7" x2="681.5" y2="-0.2"/>
+      <ellipse class="st3" cx="681.5" cy="65.7" rx="4" ry="3.9"/>
+    </g>
+    <g>
+      <line class="st4" x1="33.1" y1="191.4" x2="33.1" y2="239.1"/>
+      <ellipse class="st3" cx="33.1" cy="191.4" rx="4" ry="3.9"/>
+    </g>
+    <g>
+      <line class="st4" x1="99.9" y1="174.1" x2="99.9" y2="239.1"/>
+      <ellipse class="st3" cx="99.9" cy="173.8" rx="4" ry="3.9"/>
+    </g>
+    <g>
+      <polyline class="st4" points="166.8,174.4 230.9,174.4 230.9,239.1 		"/>
+      <ellipse class="st3" cx="166.8" cy="174.4" rx="3.9" ry="4"/>
+    </g>
+    <g>
+      <line class="st4" x1="365.7" y1="173.8" x2="365.7" y2="239.2"/>
+      <ellipse class="st3" cx="365.7" cy="173.8" rx="4" ry="3.9"/>
+    </g>
+    <g>
+      <polyline class="st4" points="565.8,174.4 500,174.4 500,239.1 		"/>
+      <ellipse class="st3" cx="565" cy="173.8" rx="4" ry="3.9"/>
+    </g>
+    <g>
+      <line class="st4" x1="631.5" y1="173.8" x2="631.5" y2="239.1"/>
+      <ellipse class="st3" cx="631.5" cy="173.8" rx="4" ry="3.9"/>
+    </g>
+  </g>
+</svg>

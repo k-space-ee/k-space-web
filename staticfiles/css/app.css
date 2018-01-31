@@ -23,16 +23,15 @@ footer, .map {
     margin-top: 30px;
 }
 
-a:link, a:visited {
+.lightlink:link, .lightlink:visited {
     color: white;
 }
 
-a:hover {
+.lightlink:hover {
     color: #34495e;
 }
 
-
-a:active {
+.lightlink:active {
     color: black;
 }
 
@@ -45,8 +44,32 @@ ul {
 	width:300px;
 }
 
+.card-image.img {
+    display: block;
+    max-height: 300px;
+    max-width: 300px;
+    height: auto;
+    width: auto;
+}
+
+.card .inventory .card-content {
+    max-height: 100px;
+}
+
 .card.small {
     height: auto;
+}
+
+a:link, a:visited {
+    color: #3498db;
+}
+
+a:hover {
+    color: #34495e;
+}
+
+a:active, a.highlight:hover {
+    color: black;
 }
 
 .darklink:link, .darklink:visited {
@@ -57,10 +80,6 @@ ul {
     color: #34495e;
 }
 
-.darklink:active {
+.darklink:active, .darklink.highlight:hover {
     color: #3498db;
-}
-
-a.highlight:hover{
-  color: #3498db;
 }

@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+
+{% load markdownify %}
+
 {% block content %}
   <div class="row container">
     <div class="section slogan">
@@ -13,9 +16,15 @@
           <div class="card">
 
 
-            <div class="card-content" style="overflow: hidden; height:150px;">
+            <div class="card-content" style="overflow: hidden; height:200px;">
               <div class="card-title"><b>{{ challenge.name }}</b></div>
-              <p style="text-align: justify;">{% if challenge.blurb %}{{ challenge.blurb }}{% else %}{{ challenge.description|slice:":500" }}{% endif %}</p>
+              <p style="text-align: justify;">
+                {% if challenge.blurb %}
+                  {{ challenge.blurb | markdownify }}
+                {% else %}
+                  {{ challenge.description|slice:":500" | markdownify }}
+                {% endif %}
+              </p>
               <div style="padding-top: 15px;">
                 {% for tag in challenge.tags.all %}
                   <div class="chip">{{ tag.name }}</div>

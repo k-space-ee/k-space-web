@@ -13,18 +13,17 @@
           <div class="col s12 m3">
             <div class="card">
               <div class="card-content">
-                    <div class="card-image">
-                      {% if item.photo %}
-                        <img src='/media/{{ item.photo }}'>
-                      {% else %}
-                        <img src='/media/missing_photo.png'>
-                      {% endif %}
-                    </div>
-
-                    <div class="card-title"><b>{{ item.item_name }}</b></div>
-                    <p>Serial: {{ item.serial_nr }}</p>
-                    <p style="text-align: justify; max-height: 120px; overflow: auto;">{{ item.description }}</p>
-
+                <div class="card-image">
+                  {% if item.photo %}
+                    <img src='/media/{{ item.photo }}'>
+                  {% else %}
+                    <img src='/media/missing_photo.png'>
+                  {% endif %}
+                </div>
+  
+                <div class="card-title"><b>{{ item.item_name }}</b></div>
+                <p>Serial: {{ item.serial_nr }}</p>
+                <p style="text-align: justify; max-height: 120px; overflow: auto;">{{ item.description }}</p>
               </div>
             </div>
           </div>

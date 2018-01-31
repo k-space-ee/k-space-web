@@ -2,7 +2,11 @@
 {% block content %}
   <div class="row container section">
     <div class="col s12 m12 l12">
-      <h2 class="header center-align">{{ user.username }}</h2>
+      {% if user.first_name or user.last_name %}
+        <h2 class="header center-align">{{ user.first_name }} {{ user.last_name }}</h2>
+      {% else %}
+        <h2 class="header center-align">{{ user.username }}</h2>
+      {% endif %}
       <div class="card horizontal" style="width:100%;">
         <div class="card-image">
           <img src="/media/{{ user.profile.icon }}">

@@ -22,7 +22,7 @@ SECRET_KEY = 'gze3mreum6caz26_k2zq8(zn+)v3pdfaup+-e20eu@vca5st=b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['k-space.ee', 'kspace', '127.0.0.1']
+ALLOWED_HOSTS = ['k-space.ee', 'kspace', '127.0.0.1', '10.179.42.230']
 
 
 # Application definition
@@ -76,6 +76,12 @@ WSGI_APPLICATION = 'kspace.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': {
+            'read_default_file': '/var/www/kspace/db.conf',
+        }
+    },
+    'debug': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }

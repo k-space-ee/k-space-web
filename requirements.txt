@@ -1,0 +1,3 @@
+django
+django-location-field
+django-markdownify

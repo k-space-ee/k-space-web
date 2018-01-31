@@ -1,5 +1,5 @@
 <head>
-  <link rel="stylesheet" href="/static/css/index.css">
+  <link rel="stylesheet" href="/static/css/index.css?ts=100">
 </head>
 
 {% extends 'base_footer.html' %}
@@ -8,7 +8,7 @@
   <div class="headerblock section">
 
     <div class="fadeimage"
-         style="opacity:1;background-image:url('http://robot.itcollege.ee/assets/img/sumoesp-soldered.jpg')"></div>
+         style="opacity:1;background-image:url('//media.k-space.ee/sumoesp-soldered.jpg')"></div>
     <!-- <div class="fadeimage" style="background-image:url('https://owncloud.koodur.com/index.php/apps/gallery/preview.public/1092117?width=2600&height=2600&c=d21f5a223e7ae8c692c537e6a35ae37f&requesttoken=TGJTDncMBCtJEG40Djt9HSUBIykoWn4bNwQpP09YAx4%3D%3A85kCFd3z8QYaaAKggYmQi%2F0mtMcmz7iSGQBOmq84Z50%3D&token=j0HUdRNEaZ37wGE')"></div>
     <div class="fadeimage" style="background-image:url('https://owncloud.koodur.com/index.php/apps/gallery/preview.public/1055905?width=2600&height=2600&c=a635e088958188e4490b17a91602366a&requesttoken=TGJTDncMBCtJEG40Djt9HSUBIykoWn4bNwQpP09YAx4%3D%3A85kCFd3z8QYaaAKggYmQi%2F0mtMcmz7iSGQBOmq84Z50%3D&token=j0HUdRNEaZ37wGE')"></div> -->
 
@@ -172,7 +172,7 @@
 
             <div class="card-content">
               <div class="card-title">{{ challenge.name }}</div>
-              <p style="text-align: justify; max-height: 120px; overflow: auto;">{{ challenge.description }}</p>
+              <p style="height: 6em; overflow: auto;">{{ challenge.description }}</p>
               </br>
               <div>
                 {% for tag in challenge.tags.all %}
@@ -208,18 +208,19 @@
           We know that we've got what it takes to operate k-space.
         </p>
 
-        <div class="col s12 m7 l3 black-text">
+        <div class="col s12 m3 black-text">
           <div class="card">
             <div class="card-image">
               <img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/8/000/1ad/2da/203cd14.jpg">
             </div>
             <div class="card-content">
               <div class="card-title">Lauri Võsandi</div>
-              <p style="text-align: justify; max-height: 120px; overflow: auto;">Master of disaster</p>
+              <p style="height: 6em; overflow: auto;">Founder of the k-space.
+              <a href="http://www.lpi.org/our-certifications/lpic-3-300-overview">Certified Linux expert</a>. Python developer and systems integrator.</p>
             </div>
           </div>
         </div>
-        <div class="col s12 m4 l3 black-text">
+        <div class="col s12 m3 black-text">
           <div class="card">
               <div class="card-image">
                 <img src="https://media-exp2.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAetAAAAJDA1ZTNlMTA0LTJlZTEtNGM1NC05YzE3LTI4NDg0MzhmMjE5MQ.jpg"/>
@@ -227,43 +228,224 @@
             <div class="card-content">
 
               <div class="card-title">Allan Vein</div>
-              <p style="text-align: justify; max-height: 120px; overflow: auto;">Mr inappropriate</p>
+              <p style="height: 6em; overflow: auto;">Mr Inappropriate<br/>&nbsp;</p>
             </div>
           </div>
         </div>
-        <div class="col s12 m4 l3 black-text">
+        <div class="col s12 m3 black-text">
           <div class="card">
             <div class="card-image">
-              <img src="http://www.mesinikeliit.ee/wp-content/uploads/2016/10/Erki_kellaga.jpg"/>
+              <img src="//media.k-space.ee/members/erki.jpg"/>
             </div>
             <div class="card-content">
               <div class="card-title">Erki Naumanis</div>
-              <p style="text-align: justify; max-height: 120px; overflow: auto;">The beekeeper</p>
+              <p style="height: 6em; overflow: auto;">
+                <a href="http://www.mesinikeliit.ee/aasta-mesinik-2016/">Beekeeper of the year 2016</a>. Builder of smart Internet enabled beehives</p>
             </div>
           </div>
         </div>
-        <div class="col s12 m4 l3 black-text">
+        <div class="col s12 m3 black-text">
           <div class="card">
             <div class="card-image">
               <img src="https://pbs.twimg.com/profile_images/2548581494/2011-06-22--02-timmu-and-laes_400x400.jpg"/>
             </div>
             <div class="card-content">
               <div class="card-title">Priit Laes</div>
-              <p style="text-align: justify; max-height: 120px; overflow: auto;">The embedded Linux guy</p>
+              <p style="height: 6em; overflow: auto;">Embedded Linux systems expert and kernel developer</p>
             </div>
           </div>
         </div>
+
+        <div class="col s12 m3 black-text">
+          <div class="card">
+            <div class="card-image">
+              <img src="//media.k-space.ee/members/silver.jpg"/>
+            </div>
+            <div class="card-content">
+              <div class="card-title">Silver Kuusik</div>
+              <p style="height: 6em; overflow: auto;">Electronics schematic design & software development. Founder of <a href="http://www.robokoding.com/">Robokoding</a></p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m3 black-text">
+          <div class="card">
+            <div class="card-image">
+              <img src="//media.k-space.ee/minion.jpg"/>
+            </div>
+            <div class="card-content">
+              <div class="card-title">Marek Juhanson</div>
+              <p style="height: 6em; overflow: auto;">3D printing and product design</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m3 black-text">
+          <div class="card">
+            <div class="card-image">
+              <img src="//media.k-space.ee/minion.jpg"/>
+            </div>
+            <div class="card-content">
+              <div class="card-title">Jaan Jänesmäe</div>
+              <p style="height: 6em; overflow: auto;">Drone building and 3D printing</p>
+            </div>
+          </div>
+        </div>
+
       </div>
 
 
       <p>Interested in joining the core team? Give Lauri a call and schedule for a visit.</p>
     </div>
   </div>
+  
+  <div class="container black-text">
+    <div class="row" style="margin-top: 32px">
+      <div class="col s12">
+        <h2 class="" id="services">Events</h2>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col s12 m6">
+        <p>In addition to the regular and not so regular events on the right we're in talks about hosting following as well:</p>
+        <ul class="browser-default">
+          <li>Laphack</li>
+          <li>Python CodeClub</li>
+          <li>Cryptocurrency interest groups</li>
+          <li>Robotex prep arena</li>
+        </ul>
+      </div>
+      <div class="col s12 m6">
+        <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=400&amp;wkst=2&amp;hl=en&amp;bgcolor=%23FFFFFF&amp;src=m5irb4eke9npgk25nrb4qh41v4%40group.calendar.google.com&amp;color=%236B3304&amp;ctz=Europe%2FTallinn" style="border-width:0" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
+      </div>
+    </div>
+  </div>
 
   <div class="container black-text">
     <div class="row" style="margin-top: 32px">
-      <div class="col s12 m6">
-        <h2 class="" id="services">Services</h2>
+      <div class="col s12">
+        <h2 class="" id="services">For individuals</h2>
+      </div>
+    </div>
+    <div class="row">
+
+      <p>For individuals we have several offers:</p>
+
+      <ul class="browser-default">
+        <li>Environment to learn about the latest trends in IT and tech down to the hardware and electronics level</li>
+        <li>Looking for a particular gadget to test out your idea? Raspberry Pi? Arduino? We got you covered!</li>
+        <li>Location for you interest group activities, see more info <a href="https://wiki.k-space.ee/index.php?title=Events" target="_blank">here</a></li>
+        <li>Use our equipment, we've got soldering stations, CNC machines, 3D printers and more</li>
+        <li>Office space for your personal projects or freelance work. Renting a whole office on your own might not make sense, why not join us?</li>
+        <li>As a bonus we also have a server room so you can get your machine up and online in no time</li>
+      </ul>
+    </div>
+    
+    
+    <div class="row">
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title" style="font-family: 'Orbitron', cursive; font-size:200%;">Newbie</span>
+              <p>Beginner package the get you started at our hackerspace</p>
+              <ul class="browser-default">
+                <li>Access to rooms 24/7</li>
+                <li>Locker for personal belongings</li>
+                <li>Access to common equipment</li>
+              </ul>
+              <p style="text-align:right; font-size:200%;font-family: 'Orbitron', cursive;">29€/month</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title" style="font-family: 'Orbitron', cursive; font-size:200%;">Resident</span>
+              <p>In addition to the stuff on the left you get following for your freelance work or hobby projects:</p>
+              <ul class="browser-default">
+                <li>Personal desk</li>
+                <li>Personal shelf</li>
+                <li>Space in the server room</li>
+              </ul>
+              <p style="text-align:right; font-size:200%;font-family: 'Orbitron', cursive;">59€/month</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title" style="font-family: 'Orbitron', cursive; font-size:200%;">Office space</span>
+              <p>In addition to the stuff on the left you get:</p>
+              <ul class="browser-default">
+                <li>Dedicated section of the hackerspace for your activities</li>
+              </ul>
+              <p style="text-align:right; font-size:200%;font-family: 'Orbitron', cursive;">99€/month</p>
+            </div>
+
+          </div>
+        </div>
+        
+
+
+    </div>
+  </div>
+
+
+
+
+
+  <div class="gallery" style="height:400px;">
+
+    <img src="//media.k-space.ee/nixiesp12.jpg"/
+    ><img src="//media.k-space.ee/basketball-robots-front.jpg"/
+    ><img src="//media.k-space.ee/nixiesp12-assembled.jpg"/
+    ><img src="//media.k-space.ee/basketball.jpg"/
+    ><img src="//media.k-space.ee/basketball-robot-base.jpg"/
+    ><img src="//media.k-space.ee/sumod-arsenalis.jpg"/
+    ><img src="//media.k-space.ee/sumoesp.jpg"/
+    ><img src="//media.k-space.ee/mass-produced-pcbs.jpg"/
+    ><img src="//media.k-space.ee/basketball-robots.jpg"/
+    >
+
+
+  </div>
+
+  
+  <div class="container black-text">
+    <div class="row" style="margin-top: 32px">
+      <div class="col s12">
+        <h2 id="services">Services for students</h2>
+      </div>
+    </div>
+    <div class="row">
+      <p>For students we offer several interesting opportunities:</p>
+      <ul class="browser-default">
+        <li>Internship opportunities and supervision, suggest a topic yourself or ask Lauri</li>
+        <li>Desk and equipment for your thesis project, eg HackRF, Proxmark etc. Let us know what you need.</li>
+        <li>Practice for Locked Shields test run</li>
+        <li>Customized 3 ECTS course for your topic of interest</li>
+        <li>Funding and equipment to participate at Robotex</li>
+      </ul>
+      <p>
+      We participated with two football robots at Robotex 2016. Here's a sneak peek what the robot sees on-board:
+      </p>
+    </div>
+  </div>
+  
+  <div style="position:relative;">
+    <video loop autoplay width="100%">
+      <source src="https://media.k-space.ee/zoidberg-football.mp4" type="video/mp4">
+    </video>
+  </div>
+
+
+  <div class="container black-text">
+    <div class="row" style="margin-top: 32px">
+      <div class="col s12">
+        <h2 class="" id="services">Corporate interests</h2>
       </div>
     </div>
     <div class="row">
@@ -279,13 +461,6 @@
         <li>Corporate visibility at international robotics competiton Robotex. Our hackerspace members have participated repeatedly at the Robotex in the past. In 2018 we're planning to participate in the basketball robots and ICD grand challenge categories.</li>
       </ul>
 
-      <p>For individuals:</p>
-
-      <ul class="browser-default">
-        <li>Environment to learn about the latest trends in IT and tech down to the hardware and electronics level</li>
-        <li>Location for you interest group activities</li>
-        <li>Office space for your personal projects or freelance work. Renting a whole office on your own might not make sense, why not join us?</li>
-      </ul>
 
       <p>Contact Lauri via e-mail address below for more information</p>
 

@@ -8,7 +8,11 @@
       <div class="col m8">
         <h3 class="">{{ challenge.name }}</h3>
 
-        <p style="">{{ challenge.description | markdownify }}</p>
+        {% if challenge.description %}
+          <p style="">{{ challenge.description | markdownify }}</p>
+        {% else %}
+          <p style="">{{ challenge.blurb | markdownify }}</p>
+        {% endif %}
 
         <div class="section">
           {% if challenge.creator.profile.contact_info %}

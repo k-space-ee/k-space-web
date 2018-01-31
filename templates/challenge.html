@@ -31,28 +31,25 @@
             <img src="/media/{{ challenge.creator.profile.icon }}"
                  alt="" class="circle">
             <span class="title">Author</span>
-            <p><b>{{ challenge.creator.username }}</b></p>
+            <p><b>{{ challenge.creator.get_full_name }}</b></p>
           </li>
-
         </ul>
 
-        <ul class="collection with-header">
-          <li class="collection-header">
-            <span class="title"><b>Tags</b></span>
-          </li>
-
+        {% if challenge.tags.all %}
+        <p>Relevant keywords:</p>
+        <ul class="browser-default">
           {% for tag in challenge.tags.all %}
             <li class="collection-item">
               <span class="">{{ tag.name }}</span>
             </li>
           {% endfor %}
         </ul>
+        {% endif %}
 
-        <ul class="collection with-header">
-          <li class="collection-header">
-            <span class="title"><b>Inventory Items</b></span>
-          </li>
+        {% if challenge.required_items.all %}
+        <p>Relevant inventory:</p>
 
+        <ul class="browser-default">
           {% for item in challenge.required_items.all %}
             {% if not item.hidden %}
               <li class="collection-item">
@@ -61,6 +58,7 @@
             {% endif %}
           {% endfor %}
         </ul>
+        {% endif %}
       </div>
     </div>
   </div>

@@ -11,14 +11,8 @@
       {% for item in inventory %}
         {% if not item.hidden %}
           <div class="col s12 m3">
-            <div class="card" style="height:350px;">
+            <div class="card">
               <div class="card-content">
-                <div class="row" style="height:210px;">
-                  <div class="col s12 m12">
-                    <div class="card-title"><b>{{ item.item_name }}</b></div>
-                    <p>Serial: {{ item.serial_nr }}</p>
-                    <p style="text-align: justify; max-height: 120px; overflow: auto;">{{ item.description }}</p>
-
                     <div class="card-image">
                       {% if item.photo %}
                         <img src='/media/{{ item.photo }}'>
@@ -26,9 +20,11 @@
                         <img src='/media/missing_photo.png'>
                       {% endif %}
                     </div>
-                  </div>
-                </div>
-                </br>
+
+                    <div class="card-title"><b>{{ item.item_name }}</b></div>
+                    <p>Serial: {{ item.serial_nr }}</p>
+                    <p style="text-align: justify; max-height: 120px; overflow: auto;">{{ item.description }}</p>
+
               </div>
             </div>
           </div>

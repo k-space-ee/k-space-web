@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'gze3mreum6caz26_k2zq8(zn+)v3pdfaup+-e20eu@vca5st=b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['k-space.ee', 'kspace', '127.0.0.1', '10.179.42.230']
 
